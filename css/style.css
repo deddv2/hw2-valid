@@ -1,0 +1,197 @@
+/* --- TOÀN TRANG (BODY) --- */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #2d3748;
+    background-color: #f7fafc;
+}
+
+/* --- ĐẦU TRANG (HEADER & NAV) --- */
+header {
+    background-color: #1a365d; /* Dark Navy - Đạt chuẩn tương phản WAVE */
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+nav {
+    background-color: #2b6cb0; /* Lighter Blue */
+    padding: 12px 24px;
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ngăn chặn hoàn toàn lỗi đè chữ khi thu nhỏ màn hình */
+    gap: 25px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 6px 12px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    text-decoration: underline;
+}
+
+/* Ảnh chú chó trên Header */
+.header-logo {
+    display: block;
+    width: 160px;
+    height: auto;
+    margin: 10px auto;
+    border-radius: 50%; /* Tạo khung tròn cho logo mềm mại */
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #ffffff;
+    margin: 15px 0 0 0;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* --- NỘI DUNG CHÍNH (MAIN) --- */
+main {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+    min-height: 500px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+main h2 {
+    color: #1a365d;
+    font-family: 'Georgia', serif;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #4a5568;
+    font-size: 1.05rem;
+}
+
+p a {
+    color: #2b6cb0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.featured-box {
+    background-color: #ebf8ff;
+    border-left: 4px solid #3182ce;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 0 6px 6px 0;
+}
+
+/* --- ADVANCED LAYOUT: CSS GRID (neighborhood.html) --- */
+.grid {
+    display: grid;
+    /* Tự động tính toán số lượng cột dựa trên kích thước màn hình */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+/* --- ADVANCED LAYOUT: FLEXBOX (parks.html) --- */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.flex .gallery-item {
+    flex: 1 1 280px; /* Co giãn linh hoạt giống kích thước ô của Grid */
+    max-width: 350px;
+}
+
+/* --- ĐỊNH DẠNG KHUNG VÀ ẢNH TRONG ALBUM --- */
+.gallery-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover; /* Cắt ảnh thông minh, chống móp méo hình */
+    display: block;
+}
+
+/* --- CUỐI TRANG (FOOTER) --- */
+footer {
+    background-color: #2d3748;
+    color: #a0aec0;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+
+/* --- ACCESSIBILITY: SKIP LINK --- */
+.skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    background-color: #ecc94b;
+    color: #1a365d;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
